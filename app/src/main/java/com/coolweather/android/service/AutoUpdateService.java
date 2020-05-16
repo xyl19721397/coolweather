@@ -13,8 +13,6 @@ import com.coolweather.android.gson.Weather;
 import com.coolweather.android.util.HttpUtil;
 import com.coolweather.android.util.Utility;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -50,7 +48,7 @@ public class AutoUpdateService extends Service {
             String weatherId = weather.basic.weatherId;
 
             String weatherUrl =  "http://guolin.tech/api/weather?cityid=" + weatherId +"&key=69667c9f275844c780132baf95e09e0a";
-            HttpUtil.sendOkHttpRequest(weatherId, new Callback() {
+            HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
                 @Override
                 public void onFailure( Call call,  IOException e) {
                     e.printStackTrace();
